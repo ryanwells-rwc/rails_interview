@@ -1,0 +1,35 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  id: 
+  model_id: 
+  description: MyText
+  msrp: MyString
+  invoice: MyString
+  engine: MyString
+  transmission: MyString
+  num_of_doors: MyString
+  mpg_city: MyString
+  mpg_hwy: MyString
+  crappy_img: MyString
+  default_matched_image: MyString
+  created_at: 2017-03-11 14:35:02
+  updated_at: 2017-03-11 14:35:02
+  combined_fuel_economy: MyString
+
+two:
+  id: 
+  model_id: 
+  description: MyText
+  msrp: MyString
+  invoice: MyString
+  engine: MyString
+  transmission: MyString
+  num_of_doors: MyString
+  mpg_city: MyString
+  mpg_hwy: MyString
+  crappy_img: MyString
+  default_matched_image: MyString
+  created_at: 2017-03-11 14:35:02
+  updated_at: 2017-03-11 14:35:02
+  combined_fuel_economy: MyString
