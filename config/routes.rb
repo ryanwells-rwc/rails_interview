@@ -54,6 +54,7 @@ Rails.application.routes.draw do
   #     resources :products
   #   end
 	root 'makes#index'
+	post 'comparison' => 'trims#compare', :as => 'mycompare'
 	resources :makes, :path => '/' do
 		resources :models do
 			resources :trims
