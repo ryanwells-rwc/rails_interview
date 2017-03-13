@@ -1,0 +1,2 @@
+class TrimsController < ApplicationController
+end
