@@ -2,7 +2,7 @@
 <p>
 	Select up to 4 vehicles below to compare them side by side.
 </p>
-<%= form_for :make do |f| %>
+<%= form_for :make, url: mycompare_path do |f| %>
 	<% @make.models.each do |model| %>
 		<% model.trims.each do |trim| %>
 			<!-- Note: the pictures are backwards in the db records - the 4 door trims are paired with 2 door pics and vice versa -->
