@@ -53,7 +53,7 @@ Rails.application.routes.draw do
   #     # (app/controllers/admin/products_controller.rb)
   #     resources :products
   #   end
-	root 'makes#new'
+	root 'makes#index'
 	resources :makes, :path => '/' do
 		resources :models do
 			resources :trims

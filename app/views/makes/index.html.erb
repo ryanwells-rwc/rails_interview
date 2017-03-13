@@ -1,0 +1,23 @@
+<h1>Vehicle Comparison Simulation</h1>
+<p>
+	Select up to 4 vehicles below to compare them side by side.
+</p>
+<%= form_for :make do |f| %>
+	<% @make.models.each do |model| %>
+		<% model.trims.each do |trim| %>
+			<!-- Note: the pictures are backwards in the db records - the 4 door trims are paired with 2 door pics and vice versa -->
+			<div class="row">
+				<img src="images/<%= trim.default_matched_image %>">
+				<strong><%= trim.description %></strong>
+				<div class="checkbox">
+					<label>
+						<%=check_box_tag("trim-id-"+trim.id.to_s, trim.id)%>Compare this vehicle
+					</label>
+				</div>
+			</div>
+		<% end %>
+	<% end %>
+	<div data-spy="affix" data-offset-bottom="0" style="position: relative;">
+		<%= f.submit 'Compare Selected Vehicles', :class => 'btn btn-primary' %>
+	</div>
+<% end %>

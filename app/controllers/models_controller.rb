@@ -3,5 +3,6 @@ class ModelsController < ApplicationController
 	end
 
 	def index
+		# @model = Model.find
 	end
 end
