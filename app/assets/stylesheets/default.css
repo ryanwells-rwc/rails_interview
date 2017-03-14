@@ -1,0 +1,17 @@
+div.container-fluid {
+	text-align: center;
+}
+
+th, td {
+	/*border: 1px solid black;*/
+	text-align: left;
+}
+
+.table > thead > tr th.top-align {
+	vertical-align: top;
+}
+
+.table tbody tr > td.info {
+	background-color: #007 !important;
+	color: #eee !important;
+}

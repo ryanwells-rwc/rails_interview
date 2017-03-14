@@ -1,1 +1,59 @@
 <h1>Vehicle Comparison</h1>
+<table class="table table-striped table-bordered">
+	<thead>
+		<tr>
+			<th class="col-xs-2 top-align"><h2>Compare Trims</h2></th>
+			<% @trim_list.each do |trim| %>
+				<th class="col-xs-2"><img src="images/<%=trim.default_matched_image%>" width="200" height="116"></th>
+			<% end %>
+		</tr>
+	</thead>
+	<tbody>
+	<tr>
+		<td class="col-xs-2 info">Quick Car Facts</td>
+		<% @trim_list.each do |trim| %>
+			<td class="col-xs-2 info">
+				<%=@model_list[trim.model_id].year_id%>
+				Honda
+				<%=@model_list[trim.model_id].name%>
+				<%=trim.description%>
+			</td>
+		<% end %>
+	</tr>
+	<tr>
+		<td class="col-xs-2" data-toggle="tooltip" data-placement="top" data-container="body" title="This is the Manufacturer's Suggested Retail Price - it's what the dealer would like you to pay">MSRP</td>
+		<% @trim_list.each do |trim| %>
+			<td class="col-xs-2"><%=number_to_currency(trim.msrp)%></td>
+		<% end %>
+	</tr>
+	<tr>
+		<td class="col-xs-2" data-toggle="tooltip" data-placement="top" data-container="body" title="This is the approximately what the dealer paid for the car to the manufacturer">Invoice Price</td>
+		<% @trim_list.each do |trim| %>
+			<td class="col-xs-2"><%=number_to_currency(trim.invoice)%></td>
+		<% end %>
+	</tr>
+	<tr>
+		<td class="col-xs-2" data-toggle="tooltip" data-placement="top" data-container="body" title="The car's estimated fuel economy during city driving">MPG City</td>
+		<% @trim_list.each do |trim| %>
+			<td class="col-xs-2"><%=trim.mpg_city%>mpg</td>
+		<% end %>
+	</tr>
+	<tr>
+		<td class="col-xs-2" data-toggle="tooltip" data-placement="top" data-container="body" title="The car's estimated fuel economy during highway driving">MPG Highway</td>
+		<% @trim_list.each do |trim| %>
+			<td class="col-xs-2"><%=trim.mpg_hwy%>mpg</td>
+		<% end %>
+	</tr>
+	<tr>
+		<td class="col-xs-2" data-toggle="tooltip" data-placement="top" data-container="body" title="An automatic transmission selects the appropriate gear for driving conditions without driver input; a manual transmission requires the driver to select the appropriate gear, providing more control">Transmission</td>
+		<% @trim_list.each do |trim| %>
+			<td class="col-xs-2"><%=trim.transmission%></td>
+		<% end %>
+	</tr>
+	<tbody>
+</table>
+<script>
+	$(document).ready(function(){
+    $('[data-toggle="tooltip"]').tooltip();
+	});
+</script>
